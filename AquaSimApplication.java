@@ -29,8 +29,8 @@ public class AquaSimApplication
 
         // Construct the aquarium.  Specify its dimensions when creating it.
         Aquarium aqua;                 // create reference to an Aquarium ...
-        aqua = new Aquarium(600, 480); // ... object that has now been created
-
+        //aqua = new Aquarium(600, 480); // ... object that has now been created
+        aqua = new Aquarium(600, 480);
         // Construct fish and add them to the aquarium.
         //      CODE MISSING HERE!
         AquaFish nami = new AquaFish(aqua);
@@ -62,11 +62,53 @@ public class AquaSimApplication
 
         // Make the fish move and redisplay.
         //      CODE MISSING HERE!
+        
+       
         nami.moveForward();
         tahm.moveForward();
         pyke.moveForward();
         userInterface.showAquarium();
         
+        nami.moveForward();
+        tahm.moveForward();
+        pyke.moveForward();
+        userInterface.showAquarium();
+        
+        nami.moveForward();
+        tahm.moveForward();
+        pyke.moveForward();
+        userInterface.showAquarium();
+        
+        if (nami.atWall())
+            nami.changeDir();
+        nami.moveForward();
+        
+        if (tahm.atWall())
+            tahm.changeDir();
+        tahm.moveForward();
+        
+        if (pyke.atWall())
+            pyke.changeDir();
+        pyke.moveForward();
+        
+        
+        
+        
+        
+        
+        /*nami.moveForward();
+        tahm.moveForward();
+        pyke.moveForward();*/
+        userInterface.showAquarium();
+        
+        /*nami.moveForward();
+        tahm.moveForward();
+        pyke.moveForward();
+        userInterface.showAquarium();*/
+        
+        
+            
+            
         // WRAP UP.
 
         // Remind user how to quit application.
