@@ -17,6 +17,26 @@ import java.util.Random;
  **/
 public class AquaSimApplication
 {
+    
+    private static Random generator;
+    
+    public static Color getColor()
+    {
+    int randNum = generator.nextInt(6);
+     if (randNum==0)
+     return Color.RED;
+     else if (randNum==1)
+     return Color.BLUE;
+     else if (randNum==2)
+     return Color.GREEN;
+     else if (randNum==3)
+     return Color.ORANGE;
+     else if (randNum==4)
+     return Color.YELLOW;
+     else
+     return Color.MAGENTA;
+    }
+    
     /**
      *  This is the main function.  It executes the program.
      *  @param    String args[] is never used
@@ -26,7 +46,7 @@ public class AquaSimApplication
         System.out.println("Be gentle.");
 
         // CONSTRUCT OBJECTS NEEDED FOR THE AQUARIUM SIMULATION.
-        Random generator = new Random();
+        generator = new Random();
         int randNum;
         randNum = generator.nextInt(10);
         // int randNum = generator.nextInt(10);
@@ -36,14 +56,20 @@ public class AquaSimApplication
         aqua = new Aquarium(600, 480);
         // Construct fish and add them to the aquarium.
         //      CODE MISSING HERE!
-        AquaFish nami = new AquaFish(aqua, Color.BLUE);
+        AquaFish nami = new AquaFish(aqua, getColor());
         aqua.add(nami);
         
-        AquaFish tahm = new AquaFish(aqua, Color.RED);
+        AquaFish tahm = new AquaFish(aqua, getColor());
         aqua.add(tahm);
         
-        AquaFish pyke = new AquaFish(aqua, Color.BLUE);
+        AquaFish kench = new AquaFish(aqua, getColor());
+        aqua.add(kench);
+        
+        AquaFish pyke = new AquaFish(aqua, getColor());
         aqua.add(pyke);
+        
+        AquaFish fizz = new AquaFish(aqua, getColor());
+        aqua.add(fizz);
        
         // Construct a graphical user interface (GUI) to display and control
         // the simulation.  The user interface needs to know about the
@@ -67,7 +93,57 @@ public class AquaSimApplication
         //      CODE MISSING HERE!
         
         
-        nami.moveForward();
+        for(int i = 1; i > 0; i++)
+        {
+            if(nami.atWall())
+            {
+                nami.changeDir();
+            }
+            else
+            {
+                nami.moveForward();
+            }
+            if(tahm.atWall())
+            {
+                tahm.changeDir();
+            }
+            else
+            {
+                tahm.moveForward();
+            }
+            if(kench.atWall())
+            {
+                kench.changeDir();
+            }
+            else
+            {
+                kench.moveForward();
+            }
+            if(pyke.atWall())
+            {
+                pyke.changeDir();
+            }
+            else
+            {
+                pyke.moveForward();
+            }
+            if(fizz.atWall())
+            {
+                fizz.changeDir();
+            }
+            else
+            {
+                fizz.moveForward();
+            }
+            userInterface.showAquarium();
+        }
+        
+        
+        
+        
+        
+        
+        /*nami.moveForward();
         
         tahm.moveForward();
         pyke.moveForward();
@@ -95,6 +171,8 @@ public class AquaSimApplication
             pyke.changeDir();
         pyke.moveForward();
         
+        */
+        
         
         
         
@@ -102,8 +180,8 @@ public class AquaSimApplication
         
         /*nami.moveForward();
         tahm.moveForward();
-        pyke.moveForward();*/
-        userInterface.showAquarium();
+        pyke.moveForward();
+        userInterface.showAquarium();*/
         
         /*nami.moveForward();
         tahm.moveForward();
