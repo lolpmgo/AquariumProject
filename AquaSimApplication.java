@@ -37,6 +37,7 @@ public class AquaSimApplication
      return Color.MAGENTA;
     }
     
+   
     /**
      *  This is the main function.  It executes the program.
      *  @param    String args[] is never used
@@ -75,7 +76,7 @@ public class AquaSimApplication
         // the simulation.  The user interface needs to know about the
         // aquarium, so we pass aqua to the user interface constructor.
         AquaSimGUI userInterface;              // create reference to GUI ...
-        userInterface = new AquaSimGUI(aqua);  // ... and then GUI itself
+        userInterface = new AquaSimGUI(aqua, true);  // ... and then GUI itself
 
         // Tell the user how to start the aquarium simulation.
         System.out.println("Press the Start button to start the simulation.");
@@ -92,8 +93,9 @@ public class AquaSimApplication
         // Make the fish move and redisplay.
         //      CODE MISSING HERE!
         
-        
-        for(int i = 1; i > 0; i++)
+                
+        //for(int i = 1; i > 0; i++)
+        for(int i = 1; i <= userInterface.getNumberOfSteps(); i++)
         {
             if(nami.atWall())
             {
@@ -137,7 +139,6 @@ public class AquaSimApplication
             }
             userInterface.showAquarium();
         }
-        
         
         
         
@@ -197,5 +198,6 @@ public class AquaSimApplication
         userInterface.println ("Close GUI display window to quit.");
 
     }//end main
+
 
 }//end class
