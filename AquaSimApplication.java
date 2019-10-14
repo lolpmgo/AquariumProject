@@ -198,6 +198,11 @@ public class AquaSimApplication
         userInterface.println ("Close GUI display window to quit.");
 
     }//end main
-
+    public static boolean changeDir()
+    {
+        if (generator.nextInt(4) ==0)
+            return true;
+        return false;
+    }
 
 }//end class
